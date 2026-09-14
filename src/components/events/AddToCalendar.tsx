@@ -34,7 +34,7 @@ export default function AddToCalendar({ event }: AddToCalendarProps) {
 
   const handleGoogleCalendar = (type: 'full' | 'main') => {
     let start, end, titleSuffix;
-    
+
     if (type === 'full') {
       start = new Date(event.startDate);
       end = new Date(event.endDate);
@@ -56,7 +56,7 @@ export default function AddToCalendar({ event }: AddToCalendarProps) {
 
   const handleDownloadICS = (type: 'full' | 'main') => {
     let start, end, titleSuffix;
-    
+
     if (type === 'full') {
       start = new Date(event.startDate);
       end = new Date(event.endDate);
@@ -106,7 +106,7 @@ export default function AddToCalendar({ event }: AddToCalendarProps) {
       {isOpen && (
         <div className="absolute right-0 sm:left-0 sm:right-auto bottom-full mb-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-[100] overflow-hidden transform origin-bottom transition-all">
           <div className="py-1" role="menu" aria-orientation="vertical">
-            
+
             <div className="px-4 py-2 bg-gray-50 text-xs font-bold text-gray-500 uppercase tracking-wider">
               Full Celebration (22-25 Nov)
             </div>

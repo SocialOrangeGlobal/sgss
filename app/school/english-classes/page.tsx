@@ -11,7 +11,7 @@ export default function EnglishClassesNotFound() {
     <Layout>
       <div className="bg-[#efeeed] pt-0 pb-12 rounded-b-lg">
         <div className="mx-2 md:mx-6 bg-white rounded-[8px] border border-[#cfcfcf] px-4 py-24 md:px-8 min-h-[400px] flex flex-col justify-center items-center">
-          
+
           <h1 className="text-[17px] md:text-[19px] font-bold text-center mb-10 font-serif" style={{ color: '#000' }}>
             Not Found anything related to your search.
           </h1>
@@ -22,7 +22,7 @@ export default function EnglishClassesNotFound() {
               Home
             </Link>
           </p>
-          
+
         </div>
       </div>
     </Layout>

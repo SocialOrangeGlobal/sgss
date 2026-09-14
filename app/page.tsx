@@ -30,7 +30,7 @@ export default function HomePage() {
 
       {/* Video Section (Live Streaming) */}
       <VideoSection />
-      
+
       {/* Upcoming Events Section (Featured Event + Others) */}
       <UpcomingEventsSection />
     </Layout>

@@ -20,7 +20,7 @@ export default function EventAnnouncementBar() {
         className="bg-[#6b5a1e] text-white border-b-2 border-[#e67e22] w-full"
       >
         <div className="max-w-6xl mx-auto px-4 py-2 flex flex-col md:flex-row items-center justify-center text-sm gap-1 md:gap-3 text-center md:text-left">
-          
+
           {/* Desktop Layout */}
           <div className="hidden md:flex items-center gap-2 font-bold text-[#f5f0e8]">
             <Sparkles className="w-4 h-4 text-[#e67e22]" />
@@ -31,7 +31,7 @@ export default function EventAnnouncementBar() {
           <div className="hidden md:block w-1 h-1 rounded-full bg-[#e67e22]/50" />
           <span className="hidden md:block text-[#e8d9b5] text-xs md:text-sm">{featuredEvent.displayDate}</span>
           <div className="hidden md:block w-1 h-1 rounded-full bg-[#e67e22]/50" />
-          
+
           {/* Mobile Layout */}
           <div className="md:hidden flex flex-col items-center gap-1 mb-2">
             <div className="flex items-center gap-2 font-bold text-[#f5f0e8] mb-1">
@@ -47,7 +47,7 @@ export default function EventAnnouncementBar() {
             </div>
           </div>
 
-          <button 
+          <button
             onClick={() => setIsModalOpen(true)}
             className="inline-flex items-center gap-1 font-bold text-[#e67e22] hover:text-[#d97706] transition-colors group mt-1 md:mt-0"
           >

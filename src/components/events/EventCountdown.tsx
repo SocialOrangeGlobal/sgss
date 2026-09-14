@@ -16,7 +16,7 @@ export default function EventCountdown({ startDate, endDate, mainDate }: EventCo
     minutes: 0,
     seconds: 0,
   });
-  
+
   // States for different phases
   const [phase, setPhase] = useState<'BEFORE' | 'DURING' | 'AFTER'>('BEFORE');
   const [currentDayLabel, setCurrentDayLabel] = useState<string>('');
@@ -35,19 +35,19 @@ export default function EventCountdown({ startDate, endDate, mainDate }: EventCo
         clearInterval(interval);
       } else if (now >= start && now <= end) {
         setPhase('DURING');
-        
+
         // Determine which day it is
         const day22 = new Date("2026-11-22T00:00:00").getTime();
         const day23 = new Date("2026-11-23T00:00:00").getTime();
         const day24 = new Date("2026-11-24T00:00:00").getTime();
         const day25 = new Date("2026-11-25T00:00:00").getTime();
-        
+
         // Let's dynamically calculate the day index
         const msPerDay = 24 * 60 * 60 * 1000;
-        
+
         // We can just use the dates directly for our logic based on user spec
         const todayStr = new Date(now).toISOString().split('T')[0];
-        
+
         if (todayStr === "2026-11-22") {
           setCurrentDayLabel("Day 1 of Gurpurab Celebrations");
         } else if (todayStr === "2026-11-23") {
@@ -59,7 +59,7 @@ export default function EventCountdown({ startDate, endDate, mainDate }: EventCo
         } else {
           setCurrentDayLabel("Gurpurab Celebrations Are Underway");
         }
-        
+
       } else {
         setPhase('BEFORE');
         const distance = start - now;

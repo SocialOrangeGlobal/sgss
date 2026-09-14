@@ -34,14 +34,14 @@ export default function CalendarPage() {
     <Layout>
       <div className="bg-[#efeeed] pt-0 pb-12 rounded-b-lg">
         <div className="mx-2 md:mx-6 bg-white rounded-[8px] border border-[#cfcfcf] px-4 py-8 md:px-8 md:py-8 min-h-[500px]">
-          
+
           <h1 className="text-xl md:text-2xl lg:text-[28px] font-serif text-center mb-8" style={{ color: '#5a3e0a' }}>
             Calender 2019
           </h1>
 
           {/* The main layout box from the screenshot */}
           <div className="max-w-4xl mx-auto border border-[#cfcfcf] p-4 md:p-8" style={{ minHeight: '400px' }}>
-            
+
             <h2 className="text-xl font-bold mb-6 text-center" style={{ color: '#ff6a00' }}>
               Punjabi School Term Dates
             </h2>
@@ -77,7 +77,7 @@ export default function CalendarPage() {
             </div>
 
           </div>
-          
+
         </div>
       </div>
     </Layout>

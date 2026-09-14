@@ -27,8 +27,8 @@ export default function VideoSection() {
           aria-label="Live streaming video placeholder"
         >
           <div className="w-full h-full bg-black overflow-hidden rounded-sm relative">
-            <LazyVideo 
-              controls 
+            <LazyVideo
+              controls
               className="w-full h-full object-cover"
               poster="/images/home/hero_image_3.jpg"
               src="/images/news/news-video.mp4"

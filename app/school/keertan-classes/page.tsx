@@ -11,7 +11,7 @@ export default function KeertanClassesPage() {
     <Layout>
       <div className="bg-[#efeeed] pt-0 pb-12 rounded-b-lg">
         <div className="mx-2 md:mx-6 bg-white rounded-[8px] border border-[#cfcfcf] px-4 py-8 md:px-8 md:py-8">
-          
+
           <h1 className="text-xl md:text-2xl lg:text-[28px] font-serif text-center mb-8" style={{ color: '#5a3e0a' }}>
             Keertan Classes
           </h1>
@@ -29,7 +29,7 @@ export default function KeertanClassesPage() {
               Please contact us for keertan classes.
             </p>
           </div>
-          
+
         </div>
       </div>
     </Layout>

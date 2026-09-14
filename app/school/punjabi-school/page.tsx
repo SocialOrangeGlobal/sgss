@@ -26,12 +26,12 @@ export default function PunjabiSchoolPage() {
               <p className="mb-4">
                 Sri Guru Singh Sabha Punjabi School is situated in Gurdwara Campus over the last 6 years. Our purpose is to educate children to become young bicultural, bilingual Australian Citizens and adults who will continue to learn and thrive in an ever-changing world. We want our children to have passion for learning Punjabi where they connect, create and produce work that matters to them and others. We nurture children to build the skills and competencies which will assist them to effectively collaborate and operate in the global world. A major upgrade of facilities occurred in 2018, school infrastructure is more attractive and support school community and learning atmosphere. School timings are from 10:00am to 1:00pm except the school holidays
               </p>
-                <LazyImage
-                  src="/images/school/punjabi/punjabi-school1.jpg"
-                  alt="Punjabi School Student"
-                  className="w-full h-auto object-cover border border-gray-300 shadow-sm"
-                  wrapperClassName="w-full max-w-xl"
-                />
+              <LazyImage
+                src="/images/school/punjabi/punjabi-school1.jpg"
+                alt="Punjabi School Student"
+                className="w-full h-auto object-cover border border-gray-300 shadow-sm"
+                wrapperClassName="w-full max-w-xl"
+              />
             </div>
 
             {/* Typical Student/Family Profile */}
@@ -40,12 +40,12 @@ export default function PunjabiSchoolPage() {
               <p className="mb-4">
                 We have students from mixed background, at least 10 percent of our children are born overseas, or homeland and they are quick learners in every aspect of study majority of the other students are Australian born and consider Punjabi as a second language. Their age level is from 5 years to 13 years, both girls and boys love to learn our language, culture and traditions. Families from different parts of Punjab are coming to attend the school for example from cities, towns and regional areas.
               </p>
-                <LazyImage
-                  src="/images/school/punjabi/punjabi-school2.jpg"
-                  alt="Punjabi School Students on Stage"
-                  className="w-full h-auto object-cover border border-gray-300 shadow-sm"
-                  wrapperClassName="w-full max-w-xl"
-                />
+              <LazyImage
+                src="/images/school/punjabi/punjabi-school2.jpg"
+                alt="Punjabi School Students on Stage"
+                className="w-full h-auto object-cover border border-gray-300 shadow-sm"
+                wrapperClassName="w-full max-w-xl"
+              />
             </div>
 
             {/* School Staff */}
@@ -54,12 +54,12 @@ export default function PunjabiSchoolPage() {
               <p className="mb-4">
                 School is so proud to provide a learning environment that foster children&apos;s emotional and social learning to develop self-responsibility, respectfulness and resilience. Our teachers inspire students to be active and independent learners and responsible global citizens who act to improve their world. School follows ESAV Professional development activities for all the teachers throughout the year to learn variety of methods to teach and assess children individually. The school ensure that the staff are appropriately trained and have Working with Children Checks and First Aid Certificates are up to date.
               </p>
-                <LazyImage
-                  src="/images/school/punjabi/punjabi-school3.jpg"
-                  alt="Punjabi School Staff and Students"
-                  className="w-full h-auto object-cover border border-gray-300 shadow-sm"
-                  wrapperClassName="w-full max-w-xl"
-                />
+              <LazyImage
+                src="/images/school/punjabi/punjabi-school3.jpg"
+                alt="Punjabi School Staff and Students"
+                className="w-full h-auto object-cover border border-gray-300 shadow-sm"
+                wrapperClassName="w-full max-w-xl"
+              />
             </div>
 
             {/* Registration Process */}

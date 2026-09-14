@@ -66,10 +66,10 @@ export default function EventDetailsModal({ isOpen, onClose }: EventDetailsModal
             className="relative w-full max-w-4xl bg-[#fdfbf7] rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-full outline-none"
           >
             {/* Header / Banner */}
-            <div 
+            <div
               className="relative text-white px-6 py-8 md:px-10 md:py-10 flex-shrink-0"
-              style={{ 
-                backgroundImage: "url('/images/logos/bg_img.jpg')", 
+              style={{
+                backgroundImage: "url('/images/logos/bg_img.jpg')",
                 backgroundRepeat: 'repeat',
                 backgroundColor: '#6b5a1e',
                 backgroundBlendMode: 'multiply'
@@ -86,7 +86,7 @@ export default function EventDetailsModal({ isOpen, onClose }: EventDetailsModal
               <div className="inline-block bg-[#e67e22] text-white px-3 py-1 rounded text-xs font-bold tracking-wider mb-4 shadow-sm uppercase">
                 {featuredEvent.category}
               </div>
-              
+
               <h2 id="modal-title" className="text-3xl md:text-4xl font-serif font-bold text-white mb-2 leading-tight">
                 {featuredEvent.title}
               </h2>
@@ -98,7 +98,7 @@ export default function EventDetailsModal({ isOpen, onClose }: EventDetailsModal
             {/* Body */}
             <div className="overflow-y-auto p-6 md:p-10 text-[#333333]">
               <div className="flex flex-col md:flex-row gap-8">
-                
+
                 {/* Left Column: Details */}
                 <div className="flex-1 space-y-6">
                   <div>
@@ -124,7 +124,7 @@ export default function EventDetailsModal({ isOpen, onClose }: EventDetailsModal
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="pt-2">
                     <AddToCalendar event={featuredEvent} />
                   </div>
@@ -137,24 +137,23 @@ export default function EventDetailsModal({ isOpen, onClose }: EventDetailsModal
                       <Clock className="w-5 h-5 text-[#8b6914]" />
                       <h3 className="text-lg font-bold text-[#8b6914]">Program Schedule</h3>
                     </div>
-                    
+
                     {/* Tabs */}
                     <div className="flex overflow-x-auto pb-2 mb-4 gap-2" style={{ scrollbarWidth: 'none' }}>
-                       {featuredEvent.programSchedule.map((day, idx) => (
-                         <button 
-                           key={idx}
-                           onClick={() => setActiveDay(idx)}
-                           className={`flex-shrink-0 px-3 py-2 rounded text-xs font-bold whitespace-nowrap transition-colors ${
-                             activeDay === idx 
-                               ? 'bg-[#e67e22] text-white shadow-sm' 
-                               : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
-                           }`}
-                         >
-                           {day.label.toUpperCase().replace(' NOVEMBER', ' NOV')} {day.mainDay && '★'}
-                         </button>
-                       ))}
+                      {featuredEvent.programSchedule.map((day, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setActiveDay(idx)}
+                          className={`flex-shrink-0 px-3 py-2 rounded text-xs font-bold whitespace-nowrap transition-colors ${activeDay === idx
+                              ? 'bg-[#e67e22] text-white shadow-sm'
+                              : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
+                            }`}
+                        >
+                          {day.label.toUpperCase().replace(' NOVEMBER', ' NOV')} {day.mainDay && '★'}
+                        </button>
+                      ))}
                     </div>
-                    
+
                     {/* Active Day Content */}
                     <div className="min-h-[150px]">
                       {featuredEvent.programSchedule[activeDay].mainDay && (
@@ -163,7 +162,7 @@ export default function EventDetailsModal({ isOpen, onClose }: EventDetailsModal
                           <span className="text-gray-700 text-xs font-semibold">{featuredEvent.occasion} of {featuredEvent.title}</span>
                         </div>
                       )}
-                      
+
                       {featuredEvent.programSchedule[activeDay].events.length > 0 ? (
                         <ul className="space-y-4 relative">
                           <div className="absolute left-[7px] top-2 bottom-2 w-0.5 bg-[#e8d9b5]" />

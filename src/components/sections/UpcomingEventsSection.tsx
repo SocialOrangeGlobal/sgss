@@ -9,10 +9,10 @@ export default function UpcomingEventsSection() {
         Upcoming Events
         <img src="/images/logos/tool.png" alt="" className="h-6 w-auto inline-block" />
       </h3>
-      
+
       {/* Featured Event */}
       <FeaturedEventCard />
-      
+
       {/* Other Upcoming Events */}
       <div className="mt-8">
         <h4 className="text-xl font-serif mb-4 text-[#8b6914]">Other Upcoming Events</h4>
@@ -52,13 +52,13 @@ export default function UpcomingEventsSection() {
           `}} />
           <div className="upcoming-scroll h-full w-full overflow-y-auto bg-white">
             <div className="p-4 md:p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-              
+
               <div className="border-b md:border-b-0 md:border-r border-gray-200 pb-4 md:pb-0 md:pr-6">
                 <h4 className="text-[#e67e22] font-bold text-lg">Special Kirtan Darbar</h4>
                 <p className="text-sm text-gray-500 font-medium mt-1">Sunday, 25 June | 10:00 AM - 1:00 PM</p>
                 <p className="text-sm mt-2 text-gray-700">Join us for a special weekend Diwan featuring prominent Raagi Jathas from overseas. Guru ka Langar will be served continuously.</p>
               </div>
-              
+
               <div className="border-b md:border-b-0 border-gray-200 pb-4 md:pb-0">
                 <h4 className="text-[#e67e22] font-bold text-lg">Youth Gurmat Camp</h4>
                 <p className="text-sm text-gray-500 font-medium mt-1">Saturday, 8 July | 9:00 AM - 4:00 PM</p>
@@ -76,7 +76,7 @@ export default function UpcomingEventsSection() {
                 <p className="text-sm text-gray-500 font-medium mt-1">Sunday, 30 July | 11:00 AM - 2:00 PM</p>
                 <p className="text-sm mt-2 text-gray-700">A free general health checkup camp organized by volunteer doctors for the local community. Blood pressure, sugar levels, and general consultation provided.</p>
               </div>
-              
+
             </div>
           </div>
         </div>

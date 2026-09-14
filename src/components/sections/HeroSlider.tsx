@@ -98,8 +98,8 @@ export default function HeroSlider({ children }: HeroSliderProps) {
                 className={`absolute inset-0 bg-center bg-no-repeat ${
                   // @ts-ignore - dynamic property
                   slides[current].bgClass || 'bg-cover'
-                } ${slides[current].isEventBanner ? 'cursor-pointer' : ''}`}
-                style={{ 
+                  } ${slides[current].isEventBanner ? 'cursor-pointer' : ''}`}
+                style={{
                   backgroundImage: slides[current].imageBg,
                   // @ts-ignore - dynamic property
                   backgroundColor: slides[current].bgColor || 'transparent'
@@ -108,7 +108,7 @@ export default function HeroSlider({ children }: HeroSliderProps) {
                 onClick={() => handleSlideClick(slides[current])}
               >
                 {/* Slide dot indicators */}
-                <div 
+                <div
                   className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2"
                   onClick={(e) => e.stopPropagation()}
                 >
