@@ -7,10 +7,16 @@ export const metadata: Metadata = {
   description: 'Sri Guru Singh Sabha Craigieburn - A Sikh Gurdwara serving the community in Craigieburn, Victoria, Australia.',
   generator: 'v0.app',
   keywords: 'Gurdwara, Sikh, Craigieburn, Sri Guru Singh Sabha, Melbourne',
+  icons: {
+    icon: '/images/logos/logo_img.png',
+    shortcut: '/images/logos/logo_img.png',
+    apple: '/images/logos/logo_img.png',
+  },
   openGraph: {
     title: 'Sri Guru Singh Sabha | Craigieburn',
     description: 'Sri Guru Singh Sabha Craigieburn - A Sikh Gurdwara serving the community.',
     type: 'website',
+    images: ['/images/logos/logo_img.png'],
   },
 };
 
