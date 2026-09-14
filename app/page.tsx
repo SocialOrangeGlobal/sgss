@@ -3,6 +3,7 @@ import HeroSlider from '@/src/components/sections/HeroSlider';
 import DiwanPrograms from '@/src/components/sections/DiwanPrograms';
 import QuickLinks from '@/src/components/sections/QuickLinks';
 import VideoSection from '@/src/components/sections/VideoSection';
+import UpcomingEventsSection from '@/src/components/sections/UpcomingEventsSection';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -27,8 +28,11 @@ export default function HomePage() {
         </div>
       </HeroSlider>
 
-      {/* Video Section */}
+      {/* Video Section (Live Streaming) */}
       <VideoSection />
+      
+      {/* Upcoming Events Section (Featured Event + Others) */}
+      <UpcomingEventsSection />
     </Layout>
   );
 }
