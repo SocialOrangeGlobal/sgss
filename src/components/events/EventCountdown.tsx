@@ -3,10 +3,12 @@
 import { useState, useEffect } from 'react';
 
 interface EventCountdownProps {
-  targetDate: string; // ISO string
+  startDate: string; // ISO string
+  endDate: string; // ISO string
+  mainDate: string; // ISO string
 }
 
-export default function EventCountdown({ targetDate }: EventCountdownProps) {
+export default function EventCountdown({ startDate, endDate, mainDate }: EventCountdownProps) {
   const [mounted, setMounted] = useState(false);
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -14,30 +16,53 @@ export default function EventCountdown({ targetDate }: EventCountdownProps) {
     minutes: 0,
     seconds: 0,
   });
-  const [isStarted, setIsStarted] = useState(false);
-  const [isCompleted, setIsCompleted] = useState(false);
+  
+  // States for different phases
+  const [phase, setPhase] = useState<'BEFORE' | 'DURING' | 'AFTER'>('BEFORE');
+  const [currentDayLabel, setCurrentDayLabel] = useState<string>('');
 
   useEffect(() => {
     setMounted(true);
-    const target = new Date(targetDate).getTime();
-    
-    // Using 24 hours after target date as completed
-    const completionTime = target + 24 * 60 * 60 * 1000; 
+    const start = new Date(startDate).getTime();
+    const end = new Date(endDate).getTime();
+    const main = new Date(mainDate).getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
-      const distance = target - now;
 
-      if (distance < 0) {
-        if (now > completionTime) {
-          setIsCompleted(true);
-          setIsStarted(false);
-        } else {
-          setIsStarted(true);
-          setIsCompleted(false);
-        }
+      if (now > end) {
+        setPhase('AFTER');
         clearInterval(interval);
+      } else if (now >= start && now <= end) {
+        setPhase('DURING');
+        
+        // Determine which day it is
+        const day22 = new Date("2026-11-22T00:00:00").getTime();
+        const day23 = new Date("2026-11-23T00:00:00").getTime();
+        const day24 = new Date("2026-11-24T00:00:00").getTime();
+        const day25 = new Date("2026-11-25T00:00:00").getTime();
+        
+        // Let's dynamically calculate the day index
+        const msPerDay = 24 * 60 * 60 * 1000;
+        
+        // We can just use the dates directly for our logic based on user spec
+        const todayStr = new Date(now).toISOString().split('T')[0];
+        
+        if (todayStr === "2026-11-22") {
+          setCurrentDayLabel("Day 1 of Gurpurab Celebrations");
+        } else if (todayStr === "2026-11-23") {
+          setCurrentDayLabel("Day 2 of Gurpurab Celebrations");
+        } else if (todayStr === "2026-11-24") {
+          setCurrentDayLabel("Main Gurpurab Today");
+        } else if (todayStr === "2026-11-25") {
+          setCurrentDayLabel("Final Day of Gurpurab Celebrations");
+        } else {
+          setCurrentDayLabel("Gurpurab Celebrations Are Underway");
+        }
+        
       } else {
+        setPhase('BEFORE');
+        const distance = start - now;
         setTimeLeft({
           days: Math.floor(distance / (1000 * 60 * 60 * 24)),
           hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
@@ -48,7 +73,7 @@ export default function EventCountdown({ targetDate }: EventCountdownProps) {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [targetDate]);
+  }, [startDate, endDate, mainDate]);
 
   if (!mounted) {
     return (
@@ -61,25 +86,31 @@ export default function EventCountdown({ targetDate }: EventCountdownProps) {
     );
   }
 
-  if (isCompleted) {
+  if (phase === 'AFTER') {
     return (
-      <div className="mt-4 inline-block bg-[#6b5a1e] text-white px-4 py-2 rounded font-bold border border-[#e67e22]">
-        Event Completed
+      <div className="mt-4">
+        <p className="text-xs font-bold text-[#8b6914] tracking-widest mb-2 uppercase">Gurpurab Celebrations Concluded</p>
+        <div className="inline-block bg-[#6b5a1e] text-white px-4 py-2 rounded font-bold border border-[#e67e22]">
+          Waheguru Ji Ka Khalsa, Waheguru Ji Ki Fateh
+        </div>
       </div>
     );
   }
 
-  if (isStarted) {
+  if (phase === 'DURING') {
     return (
-      <div className="mt-4 inline-block bg-[#e67e22] text-white px-4 py-2 rounded font-bold shadow-[0_0_12px_rgba(230,126,34,0.6)]">
-        Gurpurab Today
+      <div className="mt-4">
+        <p className="text-xs font-bold text-[#8b6914] tracking-widest mb-2 uppercase">Gurpurab Celebrations Are Underway</p>
+        <div className="inline-block bg-[#e67e22] text-white px-4 py-2 rounded font-bold shadow-[0_0_12px_rgba(230,126,34,0.6)]">
+          {currentDayLabel}
+        </div>
       </div>
     );
   }
 
   return (
     <div className="mt-4">
-      <p className="text-xs font-bold text-[#8b6914] tracking-widest mb-2 uppercase">Gurpurab Begins In</p>
+      <p className="text-xs font-bold text-[#8b6914] tracking-widest mb-2 uppercase">Gurpurab Celebrations Begin In</p>
       <div className="flex gap-2 sm:gap-4">
         <TimeUnit value={timeLeft.days.toString().padStart(2, '0')} label="DAYS" />
         <TimeUnit value={timeLeft.hours.toString().padStart(2, '0')} label="HOURS" />

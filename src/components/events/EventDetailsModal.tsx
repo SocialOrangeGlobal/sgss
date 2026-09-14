@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, MapPin, CalendarDays, Clock } from 'lucide-react';
 import AddToCalendar from './AddToCalendar';
@@ -13,6 +13,7 @@ interface EventDetailsModalProps {
 
 export default function EventDetailsModal({ isOpen, onClose }: EventDetailsModalProps) {
   const modalRef = useRef<HTMLDivElement>(null);
+  const [activeDay, setActiveDay] = useState(0);
 
   // Handle escape key and focus trap
   useEffect(() => {
@@ -26,6 +27,8 @@ export default function EventDetailsModal({ isOpen, onClose }: EventDetailsModal
       document.body.style.overflow = 'hidden';
       // Simple focus management - focus modal when opened
       modalRef.current?.focus();
+      // Reset active day when opened
+      setActiveDay(0);
     }
 
     return () => {
@@ -60,7 +63,7 @@ export default function EventDetailsModal({ isOpen, onClose }: EventDetailsModal
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
-            className="relative w-full max-w-3xl bg-[#fdfbf7] rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-full outline-none"
+            className="relative w-full max-w-4xl bg-[#fdfbf7] rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-full outline-none"
           >
             {/* Header / Banner */}
             <div 
@@ -109,8 +112,8 @@ export default function EventDetailsModal({ isOpen, onClose }: EventDetailsModal
                     <div className="flex items-start gap-3">
                       <CalendarDays className="w-5 h-5 text-[#e67e22] mt-0.5" />
                       <div>
-                        <p className="font-semibold text-gray-900">{featuredEvent.day}, {featuredEvent.displayDate}</p>
-                        <p className="text-sm text-gray-500">Mark your calendar</p>
+                        <p className="font-semibold text-gray-900">{featuredEvent.displayDate}</p>
+                        <p className="text-sm text-gray-500">4 Day Celebration</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -128,31 +131,57 @@ export default function EventDetailsModal({ isOpen, onClose }: EventDetailsModal
                 </div>
 
                 {/* Right Column: Program Schedule */}
-                <div className="w-full md:w-[320px] flex-shrink-0">
-                  <div className="bg-[#f9f5ee] rounded-lg p-6 border border-[#e8d9b5]/50">
-                    <div className="flex items-center gap-2 mb-6">
+                <div className="w-full md:w-[380px] flex-shrink-0">
+                  <div className="bg-[#f9f5ee] rounded-lg p-5 md:p-6 border border-[#e8d9b5]/50">
+                    <div className="flex items-center gap-2 mb-4">
                       <Clock className="w-5 h-5 text-[#8b6914]" />
                       <h3 className="text-lg font-bold text-[#8b6914]">Program Schedule</h3>
                     </div>
                     
-                    <div className="space-y-4 relative before:absolute before:inset-0 before:ml-[11px] before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-[#e8d9b5] before:to-transparent hidden"></div>
+                    {/* Tabs */}
+                    <div className="flex overflow-x-auto pb-2 mb-4 gap-2" style={{ scrollbarWidth: 'none' }}>
+                       {featuredEvent.programSchedule.map((day, idx) => (
+                         <button 
+                           key={idx}
+                           onClick={() => setActiveDay(idx)}
+                           className={`flex-shrink-0 px-3 py-2 rounded text-xs font-bold whitespace-nowrap transition-colors ${
+                             activeDay === idx 
+                               ? 'bg-[#e67e22] text-white shadow-sm' 
+                               : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
+                           }`}
+                         >
+                           {day.label.toUpperCase().replace(' NOVEMBER', ' NOV')} {day.mainDay && '★'}
+                         </button>
+                       ))}
+                    </div>
                     
-                    <ul className="space-y-4 relative">
-                      {/* Decorative vertical line */}
-                      <div className="absolute left-[7px] top-2 bottom-2 w-0.5 bg-[#e8d9b5]" />
+                    {/* Active Day Content */}
+                    <div className="min-h-[150px]">
+                      {featuredEvent.programSchedule[activeDay].mainDay && (
+                        <div className="mb-4 pb-3 border-b border-[#e8d9b5]/50">
+                          <span className="text-[#8b6914] font-bold text-sm block mb-1">Main Gurpurab</span>
+                          <span className="text-gray-700 text-xs font-semibold">{featuredEvent.occasion} of {featuredEvent.title}</span>
+                        </div>
+                      )}
                       
-                      {featuredEvent.programSchedule.map((item, index) => (
-                        <li key={index} className="relative pl-6">
-                          <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-white border-2 border-[#e67e22] shadow-sm z-10" />
-                          <div className="font-semibold text-[#5a3e0a]">{item.event}</div>
-                          <div className="text-sm text-gray-500 mt-0.5">{item.time}</div>
-                        </li>
-                      ))}
-                    </ul>
+                      {featuredEvent.programSchedule[activeDay].events.length > 0 ? (
+                        <ul className="space-y-4 relative">
+                          <div className="absolute left-[7px] top-2 bottom-2 w-0.5 bg-[#e8d9b5]" />
+                          {featuredEvent.programSchedule[activeDay].events.map((item: any, index: number) => (
+                            <li key={index} className="relative pl-6">
+                              <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-white border-2 border-[#e67e22] shadow-sm z-10" />
+                              <div className="font-semibold text-[#5a3e0a]">{item.event || item.title}</div>
+                              <div className="text-sm text-gray-500 mt-0.5">{item.time}</div>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p className="text-sm text-gray-500 italic text-center py-8">
+                          Program details will be announced soon.
+                        </p>
+                      )}
+                    </div>
 
-                    <p className="text-xs text-gray-500 mt-6 italic bg-white/50 p-2 rounded">
-                      Detailed timings will be announced closer to the event date.
-                    </p>
                   </div>
                 </div>
               </div>

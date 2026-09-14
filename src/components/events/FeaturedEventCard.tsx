@@ -48,6 +48,12 @@ export default function FeaturedEventCard() {
               {featuredEvent.title}
             </h2>
             
+            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 mb-4">
+               <span className="text-gray-800 font-bold text-lg">{featuredEvent.displayDate}</span>
+               <span className="hidden sm:inline text-gray-400">•</span>
+               <span className="text-[#e67e22] font-semibold">Main Gurpurab · {featuredEvent.mainDay}</span>
+            </div>
+            
             <p className="text-gray-700 max-w-2xl text-sm md:text-base leading-relaxed mb-8">
               {featuredEvent.description}
             </p>
@@ -57,7 +63,7 @@ export default function FeaturedEventCard() {
                 onClick={() => setIsModalOpen(true)}
                 className="group flex items-center justify-center w-full sm:w-auto gap-2 bg-[#6b5a1e] hover:bg-[#e67e22] text-white px-6 py-2.5 rounded font-bold transition-colors"
               >
-                View Program
+                View Full Program
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               
@@ -77,23 +83,33 @@ export default function FeaturedEventCard() {
           >
             
             {/* Elegant Date Badge */}
-            <div className="flex items-center md:items-end gap-4 md:flex-col md:gap-1 mb-8 md:mb-0">
-              <div className="text-[#e67e22] mb-1 md:hidden">
-                <Calendar className="w-8 h-8" />
-              </div>
-              <div className="flex flex-col md:items-end">
-                <span className="text-[#8b6914] text-lg uppercase tracking-widest font-bold">{featuredEvent.day}</span>
-                <div className="flex items-baseline gap-2">
-                  <span className="text-5xl md:text-6xl font-bold text-[#e67e22] leading-none">24</span>
-                  <span className="text-xl md:text-2xl font-bold text-[#5a3e0a] uppercase">Nov</span>
-                </div>
-                <span className="text-gray-500 font-mono tracking-widest mt-1">2026</span>
-              </div>
+            <div className="flex flex-col md:items-end w-full mb-8 md:mb-0">
+               <div className="flex justify-between w-full md:w-auto md:gap-8 items-center border-b border-[#e67e22]/20 pb-4 mb-4">
+                  <div className="flex flex-col items-center">
+                    <span className="text-4xl md:text-5xl font-bold text-[#e67e22] leading-none">22</span>
+                    <span className="text-sm font-bold text-[#5a3e0a] uppercase mt-1">Nov</span>
+                  </div>
+                  <span className="text-[#8b6914] text-xs font-bold tracking-widest mx-4">— TO —</span>
+                  <div className="flex flex-col items-center">
+                    <span className="text-4xl md:text-5xl font-bold text-[#e67e22] leading-none">25</span>
+                    <span className="text-sm font-bold text-[#5a3e0a] uppercase mt-1">Nov</span>
+                  </div>
+               </div>
+               
+               <div className="text-center md:text-right w-full">
+                 <span className="text-[#8b6914] text-sm md:text-base tracking-widest font-bold uppercase block mb-2">4 Day Celebration</span>
+                 <span className="text-gray-500 text-xs font-bold tracking-wider uppercase block">Main Day</span>
+                 <span className="text-[#5a3e0a] font-bold text-lg">24 Nov · Tuesday</span>
+               </div>
             </div>
             
             {/* Countdown */}
             <div className="w-full">
-              <EventCountdown targetDate={featuredEvent.date} />
+              <EventCountdown 
+                startDate={featuredEvent.startDate} 
+                endDate={featuredEvent.endDate} 
+                mainDate={featuredEvent.mainDate} 
+              />
             </div>
             
           </div>
