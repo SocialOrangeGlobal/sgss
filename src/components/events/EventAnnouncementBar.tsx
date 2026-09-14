@@ -17,7 +17,7 @@ export default function EventAnnouncementBar() {
         initial={{ opacity: 0, y: -8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
-        className="bg-[#6b5a1e] text-white border-b-2 border-[#e67e22] w-full"
+        className="hidden lg:block bg-[#6b5a1e] text-white border-b-2 border-[#e67e22] w-full"
       >
         <div className="max-w-6xl mx-auto px-4 py-2 flex flex-wrap items-center justify-center text-xs md:text-sm gap-2 md:gap-3 text-center">
           
