@@ -164,7 +164,7 @@ export default function Header() {
         <div className="flex flex-row items-end justify-between pt-3 px-4 md:pt-4 md:px-6 pb-0">
           {/* Logo */}
           <Link href="/" className="flex items-center pb-3 flex-shrink-0" aria-label="Sri Guru Singh Sabha Craigieburn Home">
-            <img src="/images/logos/logo_img.png" alt="Sri Guru Singh Sabha" className="h-[60px] lg:h-[100px] w-auto object-contain" />
+            <img src="/images/logos/new_logo_img.png" alt="Sri Guru Singh Sabha" className="h-[60px] lg:h-[100px] w-auto object-contain" />
           </Link>
 
           {/* Desktop Nav */}

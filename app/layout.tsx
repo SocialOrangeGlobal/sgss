@@ -8,15 +8,15 @@ export const metadata: Metadata = {
   generator: 'v0.app',
   keywords: 'Gurdwara, Sikh, Craigieburn, Sri Guru Singh Sabha, Melbourne',
   icons: {
-    icon: '/images/logos/logo_img.png',
-    shortcut: '/images/logos/logo_img.png',
-    apple: '/images/logos/logo_img.png',
+    icon: '/images/logos/new_logo_img.png',
+    shortcut: '/images/logos/new_logo_img.png',
+    apple: '/images/logos/new_logo_img.png',
   },
   openGraph: {
     title: 'Sri Guru Singh Sabha | Craigieburn',
     description: 'Sri Guru Singh Sabha Craigieburn - A Sikh Gurdwara serving the community.',
     type: 'website',
-    images: ['/images/logos/logo_img.png'],
+    images: ['/images/logos/new_logo_img.png'],
   },
 };
 
