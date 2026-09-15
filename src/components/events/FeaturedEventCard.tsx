@@ -91,13 +91,13 @@ export default function FeaturedEventCard() {
                 </div>
                 <span className="text-[#8b6914] text-xs font-bold tracking-widest mx-4">— TO —</span>
                 <div className="flex flex-col items-center">
-                  <span className="text-4xl md:text-5xl font-bold text-[#e67e22] leading-none">25</span>
+                  <span className="text-4xl md:text-5xl font-bold text-[#e67e22] leading-none">24</span>
                   <span className="text-sm font-bold text-[#5a3e0a] uppercase mt-1">Nov</span>
                 </div>
               </div>
 
               <div className="text-center md:text-right w-full">
-                <span className="text-[#8b6914] text-sm md:text-base tracking-widest font-bold uppercase block mb-2">4 Day Celebration</span>
+                <span className="text-[#8b6914] text-sm md:text-base tracking-widest font-bold uppercase block mb-2">3 Day Celebration</span>
                 <span className="text-gray-500 text-xs font-bold tracking-wider uppercase block">Main Day</span>
                 <span className="text-[#5a3e0a] font-bold text-lg">24 Nov · Tuesday</span>
               </div>

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, MapPin, CalendarDays, Clock } from 'lucide-react';
+import { X, MapPin, CalendarDays, Clock, Download } from 'lucide-react';
 import AddToCalendar from './AddToCalendar';
 import { featuredEvent } from '@/src/data/events';
 
@@ -63,7 +63,7 @@ export default function EventDetailsModal({ isOpen, onClose }: EventDetailsModal
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
-            className="relative w-full max-w-4xl bg-[#fdfbf7] rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-full outline-none"
+            className="relative w-full max-w-5xl lg:max-w-6xl bg-[#fdfbf7] rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh] outline-none"
           >
             {/* Header / Banner */}
             <div
@@ -113,7 +113,7 @@ export default function EventDetailsModal({ isOpen, onClose }: EventDetailsModal
                       <CalendarDays className="w-5 h-5 text-[#e67e22] mt-0.5" />
                       <div>
                         <p className="font-semibold text-gray-900">{featuredEvent.displayDate}</p>
-                        <p className="text-sm text-gray-500">4 Day Celebration</p>
+                        <p className="text-sm text-gray-500">3 Day Celebration</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -125,14 +125,25 @@ export default function EventDetailsModal({ isOpen, onClose }: EventDetailsModal
                     </div>
                   </div>
 
-                  <div className="pt-2">
-                    <AddToCalendar event={featuredEvent} />
+                  <div className="pt-2 flex flex-col xl:flex-row gap-3">
+                    <div className="flex-1">
+                      <AddToCalendar event={featuredEvent} />
+                    </div>
+                    <a
+                      href="/documents/ProgramSchedule.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-white text-[#6b5a1e] border border-[#6b5a1e] rounded font-semibold shadow-sm hover:bg-[#6b5a1e] hover:text-white transition-colors text-center whitespace-nowrap"
+                    >
+                      <Download className="w-4 h-4 flex-shrink-0" />
+                      <span>Download Schedule</span>
+                    </a>
                   </div>
                 </div>
 
                 {/* Right Column: Program Schedule */}
-                <div className="w-full md:w-[380px] flex-shrink-0">
-                  <div className="bg-[#f9f5ee] rounded-lg p-5 md:p-6 border border-[#e8d9b5]/50">
+                <div className="w-full md:w-[450px] lg:w-[500px] flex-shrink-0">
+                  <div className="bg-[#f9f5ee] rounded-lg p-5 md:p-6 border border-[#e8d9b5]/50 h-full">
                     <div className="flex items-center gap-2 mb-4">
                       <Clock className="w-5 h-5 text-[#8b6914]" />
                       <h3 className="text-lg font-bold text-[#8b6914]">Program Schedule</h3>

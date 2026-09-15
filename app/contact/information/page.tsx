@@ -25,23 +25,19 @@ export default function ContactInformationPage() {
                 <tbody>
                   <tr className="border-b border-dotted border-gray-400">
                     <td className="py-2 px-4 font-medium w-[120px] md:w-[150px]">NAME</td>
-                    <td className="py-2 px-4">Gurudwara Sri Guru Singh Sabha</td>
+                    <td className="py-2 px-4">Gurdwara Sahib, Sri Guru Singh Sabha</td>
                   </tr>
                   <tr className="border-b border-dotted border-gray-400">
                     <td className="py-2 px-4 font-medium">ADDRESS</td>
-                    <td className="py-2 px-4">344, Hume Hwy Craigieburn, 3064, Vic. Australia</td>
+                    <td className="py-2 px-4">344 Hume Highway, Craigieburn, VIC 3064, Australia</td>
                   </tr>
                   <tr className="border-b border-dotted border-gray-400">
                     <td className="py-2 px-4 font-medium">PHONE</td>
-                    <td className="py-2 px-4">0404 475 901</td>
-                  </tr>
-                  <tr className="border-b border-dotted border-gray-400">
-                    <td className="py-2 px-4 font-medium">FAX</td>
-                    <td className="py-2 px-4">+61 (0)3 9305 6511</td>
+                    <td className="py-2 px-4">(03) 9305 6511</td>
                   </tr>
                   <tr className="border-b border-dotted border-gray-400">
                     <td className="py-2 px-4 font-medium">EMAIL</td>
-                    <td className="py-2 px-4">secretary@sgss.org.au</td>
+                    <td className="py-2 px-4">contact@sgss.com.au</td>
                   </tr>
                   <tr>
                     <td className="py-2 px-4 font-medium">BUS</td>
@@ -53,28 +49,29 @@ export default function ContactInformationPage() {
 
             <div className="mb-8">
               <h2 className="text-[20px] font-serif" style={{ color: '#8b6914' }}>
-                Gurudwara Sri Guru Singh Sabha,
+                Gurudwara Sahib, Sri Guru Singh Sabha
               </h2>
-              <p className="text-[#ff6a00] text-[14px] mb-4">The Sikh Cultural Society of Victoria. Inc</p>
+              <p className="text-[#ff6a00] text-[14px] mb-1">Sikh Cultural Society of Victoria Incorporated</p>
+              <p className="text-gray-600 text-[12px] mb-4">ABN 13 553 721 764 | Registered Charity — Australian Charities and Not-for-profits Commission</p>
 
               <div className="text-[13px] md:text-[14px] text-[#333] space-y-1">
                 <p>ADDRESS</p>
-                <p>344, Hume Hwy, Craigieburn, 3064, Vic. Australia</p>
+                <p>344 Hume Highway, Craigieburn, VIC 3064, Australia</p>
 
                 <p className="pt-2">PH &amp; FAX:</p>
-                <p>+61 (0)3 9305 6511</p>
+                <p>(03) 9305 6511</p>
 
                 <p className="pt-2">EMAIL :</p>
-                <p className="text-[#ff6a00]">secretary@sgss.org.au</p>
+                <p className="text-[#ff6a00]">contact@sgss.com.au</p>
 
                 <p className="pt-2">FINANCIAL INQUIRIES:</p>
-                <p className="text-[#ff6a00]">treasurer@sgss.org.au</p>
+                <p className="text-[#ff6a00]">treasurer@sgss.com.au</p>
 
                 <p className="pt-2">SCHOOL:</p>
-                <p className="text-[#ff6a00]">school@sgss.org.au</p>
+                <p className="text-[#ff6a00]">school@sgss.com.au</p>
 
                 <p className="pt-2">WEBMASTER:</p>
-                <p className="text-[#ff6a00]">webmaster@sgss.org.au</p>
+                <p className="text-[#ff6a00]">webmaster@sgss.com.au</p>
               </div>
             </div>
 

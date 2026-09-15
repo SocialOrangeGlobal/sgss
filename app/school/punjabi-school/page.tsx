@@ -71,10 +71,10 @@ export default function PunjabiSchoolPage() {
                 <li>enrolment fees $50</li>
                 <li>nil tuition fees</li>
                 <li>collect the enrolment form from school office</li>
-                <li>submit it either via email at <a href="mailto:school@sgss.org.au" className="text-[#ff6a00] hover:underline">school@sgss.org.au</a> or drop it in person on any Sunday between 10am to 1pm during school term</li>
+                <li>submit it either via email at <a href="mailto:school@sgss.com.au" className="text-[#ff6a00] hover:underline">school@sgss.com.au</a> or drop it in person on any Sunday between 10am to 1pm during school term</li>
               </ul>
               <p className="mb-4">
-                For more information or feedback please contact school via email at <a href="mailto:school@sgss.org.au" className="text-[#ff6a00] hover:underline">school@sgss.org.au</a> or call Jasvir Kaur on 0424 194 638
+                For more information or feedback please contact school via email at <a href="mailto:school@sgss.com.au" className="text-[#ff6a00] hover:underline">school@sgss.com.au</a> or call Jasvir Kaur on 0424 194 638
               </p>
 
               <a

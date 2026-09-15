@@ -47,7 +47,7 @@ export default function EmploymentPage() {
 
             <h2 className="font-bold text-[14px] md:text-[15px] mb-2">How to Apply</h2>
             <p>
-              Please email all the documents to <a href="mailto:secretary@sgss.org.au" className="text-[#ff6a00] hover:underline">secretary@sgss.org.au</a>
+              Please email all the documents to <a href="mailto:contact@sgss.com.au" className="text-[#ff6a00] hover:underline">contact@sgss.com.au</a>
             </p>
           </div>
         </div>
